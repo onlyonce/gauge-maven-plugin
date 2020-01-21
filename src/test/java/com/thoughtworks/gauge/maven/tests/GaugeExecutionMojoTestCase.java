@@ -48,7 +48,7 @@ public class GaugeExecutionMojoTestCase extends AbstractMojoTestCase {
         GaugeExecutionMojo mojo = (GaugeExecutionMojo) lookupMojo(GaugeExecutionMojo.GAUGE_EXEC_MOJO_NAME, testPom);
 
         assertNotNull(mojo);
-        assertEquals(true, mojo.isSkipTests());
+        assertTrue(mojo.isSkipTests());
     }
 
     public void testSimpleGaugeMojoWithTableRows() throws Exception {
@@ -66,7 +66,7 @@ public class GaugeExecutionMojoTestCase extends AbstractMojoTestCase {
         GaugeExecutionMojo mojo = (GaugeExecutionMojo) lookupMojo(GaugeExecutionMojo.GAUGE_EXEC_MOJO_NAME, testPom);
 
         boolean actual = mojo.verifyParameters();
-        assertEquals(false, actual);
+        assertFalse(actual);
     }
 
     public void testSimpleGaugeMojoWithSpecsDirAndTags() throws Exception {

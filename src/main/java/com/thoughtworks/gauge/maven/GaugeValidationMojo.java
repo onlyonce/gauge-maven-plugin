@@ -64,7 +64,7 @@ public class GaugeValidationMojo extends AbstractMojo {
      * Additional flags for gauge execution
      */
     @Parameter(defaultValue = "${gauge.exec.additionalFlags}", property = "flags", required = false)
-    private List flags;
+    private List<String> flags;
 
     /** {@inheritDoc} */
     public void execute() throws MojoExecutionException, MojoFailureException {
@@ -78,7 +78,7 @@ public class GaugeValidationMojo extends AbstractMojo {
     }
 
     public ArrayList<String> getCommand() {
-        ArrayList<String> command = new ArrayList<String>();
+        ArrayList<String> command = new ArrayList<>();
         command.add(GAUGE);
         command.add(VALIDATE);
         addAdditionalFlags(command);

@@ -33,9 +33,7 @@ public class GaugeCommand {
             if (process.waitFor() != 0) {
                 throw new GaugeExecutionFailedException();
             }
-        } catch (InterruptedException e) {
-            throw new GaugeExecutionFailedException(e);
-        } catch (IOException e) {
+        } catch (InterruptedException | IOException e) {
             throw new GaugeExecutionFailedException(e);
         }
     }
